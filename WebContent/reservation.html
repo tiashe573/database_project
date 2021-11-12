@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Reservation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='reservation.css'>
+    <script src='reservation.js'></script>
+
+    <Header>
+        <h1>Reservation</h1>
+</head>
+
+<body>
+    <table id="new_table">
+        <tr>
+            <th>Room number</th>
+            <th>Building</th>
+            <th>Floor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Period</th>
+            <th>Room Charge</th>
+            <th>Guest Name</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Library</td>
+            <td>1st Floor</td>
+            <td>11/07/2021</td>
+            <td>2:00pm</td>
+            <td>1 hr</td>
+            <td>$20</td>
+            <td>John Smith
+            <td> <button type="Add">Modify Reservation</button></td>
+
+        </tr>
+
+        
+    </table>
+	<form action="./add" method="post">
+        
+            <input type="text" name ="room_id" placeholder = "room-id" />
+            <input type="text" name ="Building" />
+            <input type="text" name ="Floor" />
+            <input type="text" name ="Date" />
+            <input type="text" name ="Time" />
+            <input type="text" name ="Period" />
+            <input type="text" name ="Room_Charge" />
+            <input type="text" name ="Guest_Name" />
+            <input type= "submit"/ value = "add">
+           
+        </form>
+        <form action="./edit" method="post">
+        
+            <input type="text" name ="room_idE" placeholder = "room-id" />
+            <input type="text" name ="BuildingE" placeholder = "Building"/>
+            <input type="text" name ="FloorE" />
+            <input type="text" name ="DateE" />
+            <input type="text" name ="TimeE" />
+            <input type="text" name ="PeriodE" />
+            <input type="text" name ="Room_ChargeE" />
+            <input type="text" name ="Guest_NameE" />
+            <input type= "submit"/ value = "edit">
+           
+        </form>
+        <form action="./edit" method="post">
+        
+            <input type="text" name ="room_idE" placeholder = "room-id" />
+            <input type="text" name ="BuildingE" placeholder = "Building"/>
+            <input type="text" name ="FloorE" />
+            <input type="text" name ="DateE" />
+            <input type="text" name ="TimeE" />
+            <input type="text" name ="PeriodE" />
+            <input type="text" name ="Room_ChargeE" />
+            <input type="text" name ="Guest_NameE" />
+            <input type= "submit"/ value = "edit">
+           
+        </form>
+        <form action="./view" method="post">
+        
+            <input type="text" name ="room_idV" placeholder = "room-id" />
+            <input type= "submit"/ value = "view">
+           
+        </form>
+
+</body>
+
+</html>

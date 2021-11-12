@@ -12,14 +12,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+import com.mysql.cj.xdevapi.Statement;
+
+@WebServlet("/EditServlet")
+public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public TestServlet() {
+	public EditServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,11 +32,10 @@ public class TestServlet extends HttpServlet {
 		ServletOutputStream out = response.getOutputStream();
 
 		out.println("<html>");
-		out.println("<head><title>Hello Servlet</title></head>");
+		out.println("<head><title>Edit Servlet</title></head>");
 
 		out.println("<body>");
-		out.println("<h3>Hello World</h3>");
-		out.println("This is my first Servlet");
+		out.println("This is my Edit Servlet");
 		out.println("</body>");
 		out.println("<html>");
 	}
@@ -53,7 +54,6 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 
-			
 			String dbDriver = "com.mysql.cj.jdbc.Driver";
 	        String dbURL = "jdbc:mysql:// localhost:3306/";
 	        // Database name to access
@@ -65,18 +65,42 @@ public class TestServlet extends HttpServlet {
 	        Connection con = DriverManager.getConnection(dbURL + dbName,
 	                                                     dbUsername, 
 	                                                     dbPassword);
-			PreparedStatement st = con.prepareStatement("INSERT INTO room VALUES (?, ?, ?, ?, ?)");
+	        PrintWriter out = response.getWriter();
 
-			st.setInt(1, Integer.valueOf(request.getParameter("room_id")));
+	        out.print(request.getParameter("BuildingE"));
 
-			// Same for second parameter
-			st.setString(2, request.getParameter("address"));
+			int id = Integer.valueOf(request.getParameter("room_idE"));
+			
+			String ids = request.getParameter("room_idE");
+			
+			String building = request.getParameter("BuildingE");
+			
+			String floor = request.getParameter("FloorE");
+			
+			String date = request.getParameter("DateE");
+			
+			String period = request.getParameter("PeriodE");
+			
+			String room_charge = request.getParameter("Room_ChargeE");
+			
+			String guest_name = request.getParameter("Guest_NameE");
+			
+			PreparedStatement st = con.prepareStatement("Update Reservation set Building = ?,  Floor = ?, Date = ?, Time = ?, Period = ?, Room_Charge = ?, Guest_Name = ?  Where room_id = ?");
+			
+			st.setString(1, request.getParameter("BuildingE"));
+			st.setInt(8, Integer.valueOf(request.getParameter("room_idE")));
 
-			st.setString(3, request.getParameter("description"));
+			st.setString(2, request.getParameter("FloorE"));
 
-			st.setInt(4, Integer.valueOf(request.getParameter("owner_id")));
+			st.setString(3, request.getParameter("DateE"));
 
-			st.setInt(5, Integer.valueOf(request.getParameter("capcity")));
+			st.setString(4, request.getParameter("TimeE"));
+			
+			st.setString(5, request.getParameter("PeriodE"));
+			
+			st.setString(6, request.getParameter("Room_ChargeE"));
+			
+			st.setString(7, request.getParameter("Guest_NameE"));
 
 			// Execute the insert command using executeUpdate()
 			// to make changes in database
@@ -88,7 +112,7 @@ public class TestServlet extends HttpServlet {
 
 			// Get a writer pointer
 			// to display the successful result
-			PrintWriter out = response.getWriter();
+			
 
 			out.println("<html><body><b>Successfully Inserted" + "</b></body></html>");
 		} catch (Exception e) {
