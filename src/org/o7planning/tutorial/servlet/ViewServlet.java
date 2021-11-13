@@ -68,7 +68,7 @@ public class ViewServlet extends HttpServlet {
 	                                                     dbUsername, 
 	                                                     dbPassword);
 	        PrintWriter out = response.getWriter();
-	        out.print(request.getParameter("room_idV"));
+
 			PreparedStatement st = con.prepareStatement("select * from Reservation where room_id = ?");
 
 			st.setInt(1, Integer.valueOf(request.getParameter("room_idV")));
@@ -95,13 +95,13 @@ public class ViewServlet extends HttpServlet {
 		        
 		        // print the results
 		        out.print("id is " + id);
-		        out.print("Building is " + Building);
-		        out.print("Floor is" + Floor);
-		        out.print("Date is " + Date);
-		        out.print("Time is" + Time);
-		        out.print("Period is " + Period);
-		        out.print("Room charge is " + Room_Charge);
-		        out.print("Guest name is " + Guest_Name);
+		        out.print(". Building is " + Building);
+		        out.print(". Floor is" + Floor);
+		        out.print(". Date is " + Date);
+		        out.print(". Time is" + Time);
+		        out.print(". Period is " + Period);
+		        out.print(". Room charge is " + Room_Charge);
+		        out.print(". Guest name is " + Guest_Name);
 		      }
 
 			// Execute the insert command using executeUpdate()

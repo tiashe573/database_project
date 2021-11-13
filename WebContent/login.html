@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
     <title>CSUF Community Out Reach</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/img/logo.png">
+    <link rel="shortcut icon" href="logo.png">
 </head>
 
 <body>
@@ -53,72 +53,9 @@
 
 
     <div class="banner1 w">
-        <table id="new_table">
-            <tr>
-                <th>Room number</th>
-                <th>Building</th>
-                <th>Floor</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Period</th>
-                <th>Room Charge</th>
-                <th>Guest Name</th>
-            </tr>
+        <div id="userinfo" class="w">
 
-            <tr>
-                <td>101</td>
-                <td>Library</td>
-                <td>1st Floor</td>
-                <td>11/07/2021</td>
-                <td>2:00pm</td>
-                <td>1 hr</td>
-                <td>$20</td>
-                <td>John Smith
-                <td> <button type="Add">Modify Reservation</button></td>
-
-            </tr>
-
-
-        </table>
-        <form action="./add" method="post">
-
-            <input type="text" name="room_id" placeholder="room-id" />
-            <input type="text" name="Building" />
-            <input type="text" name="Floor" />
-            <input type="text" name="Date" />
-            <input type="text" name="Time" />
-            <input type="text" name="Period" />
-            <input type="text" name="Room_Charge" />
-            <input type="text" name="Guest_Name" />
-            <input type="submit" / value="add">
-
-        </form>
-
-        <form action="./edit" method="post">
-
-            <input type="text" name="room_idE" placeholder="room-id" />
-            <input type="text" name="BuildingE" placeholder="Building" />
-            <input type="text" name="FloorE" />
-            <input type="text" name="DateE" />
-            <input type="text" name="TimeE" />
-            <input type="text" name="PeriodE" />
-            <input type="text" name="Room_ChargeE" />
-            <input type="text" name="Guest_NameE" />
-            <input type="submit" / value="edit">
-
-        </form>
-        <form action="./view" method="post">
-
-            <input type="text" name="room_idV" placeholder="room-id" />
-            <input type="submit" / value="view">
-
-        </form>
-        <form action="./delete" method="post">
-
-            <input type="text" name="room_idD" placeholder="room-id" />
-            <input type="submit" / value="delete">
-
-        </form>
+        </div>
     </div>
 
 
@@ -151,7 +88,29 @@
         })
 
     })
-
+    var params = location.search.substr(1);
+    // var arr = params.split('=');
+    // var res = arr.split('=');
+    var fast = 0;
+    var slow = 0;
+    var flag = true;
+    var flag2 = true;
+    while (flag) {
+        if (params.charAt(slow) == '=') {
+            flag = false;
+        }
+        slow++;
+    }
+    while (flag2) {
+        if (params.charAt(fast) == '&') {
+            flag2 = false;
+        }
+        fast++;
+    }
+    var div = document.getElementById('userinfo');
+    var res = params.slice(slow, fast - 1);
+    console.log(fast);
+    div.innerHTML = "Hello " + res;
 </Script>
 
 </html>

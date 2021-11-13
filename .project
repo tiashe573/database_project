@@ -3,6 +3,7 @@
 	<name>DBN</name>
 	<comment></comment>
 	<projects>
+		<project>ConnectMySql</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

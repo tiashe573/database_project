@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.cj.xdevapi.Statement;
 
-@WebServlet("/EditServlet")
-public class EditServlet extends HttpServlet {
+@WebServlet("/DeleteServlet")
+public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public EditServlet() {
+	public DeleteServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,10 +32,10 @@ public class EditServlet extends HttpServlet {
 		ServletOutputStream out = response.getOutputStream();
 
 		out.println("<html>");
-		out.println("<head><title>Edit Servlet</title></head>");
+		out.println("<head><title>Delete Servlet</title></head>");
 
 		out.println("<body>");
-		out.println("This is my Edit Servlet");
+		out.println("This is my Delete Servlet");
 		out.println("</body>");
 		out.println("<html>");
 	}
@@ -66,40 +66,11 @@ public class EditServlet extends HttpServlet {
 	                                                     dbUsername, 
 	                                                     dbPassword);
 	        PrintWriter out = response.getWriter();
+	        out.println("room_id" + request.getParameter("room_idD"));
+			PreparedStatement st = con.prepareStatement("delete from reservation where room_id =?");
 
+			st.setInt(1, Integer.valueOf(request.getParameter("room_idD")));
 
-			int id = Integer.valueOf(request.getParameter("room_idE"));
-			
-			String ids = request.getParameter("room_idE");
-			
-			String building = request.getParameter("BuildingE");
-			
-			String floor = request.getParameter("FloorE");
-			
-			String date = request.getParameter("DateE");
-			
-			String period = request.getParameter("PeriodE");
-			
-			String room_charge = request.getParameter("Room_ChargeE");
-			
-			String guest_name = request.getParameter("Guest_NameE");
-			
-			PreparedStatement st = con.prepareStatement("Update Reservation set Building = ?,  Floor = ?, Date = ?, Time = ?, Period = ?, Room_Charge = ?, Guest_Name = ?  Where room_id = ?");
-			
-			st.setString(1, request.getParameter("BuildingE"));
-			st.setInt(8, Integer.valueOf(request.getParameter("room_idE")));
-
-			st.setString(2, request.getParameter("FloorE"));
-
-			st.setString(3, request.getParameter("DateE"));
-
-			st.setString(4, request.getParameter("TimeE"));
-			
-			st.setString(5, request.getParameter("PeriodE"));
-			
-			st.setString(6, request.getParameter("Room_ChargeE"));
-			
-			st.setString(7, request.getParameter("Guest_NameE"));
 
 			// Execute the insert command using executeUpdate()
 			// to make changes in database
@@ -113,7 +84,7 @@ public class EditServlet extends HttpServlet {
 			// to display the successful result
 			
 
-			out.println("<html><body><b>Successfully updated" + "</b></body></html>");
+			out.println("<html><body><b> is Successfully deleted" + "</b></body></html>");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

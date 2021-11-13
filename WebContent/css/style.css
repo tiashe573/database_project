@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.w {
+    width: 1200px;
+    margin: auto;
+}
+body {
+    background-color: white;
+    background: url(../assets/img/header-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.header {
+    height: 42px;
+    margin: 30px auto;
+}
+.header li a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logoname {
+    margin-bottom: 60px;
+    color: white;
+}
+.logo {
+    float: left;
+}
+.logo a{
+    display: inline-block;
+}
+.title{
+    margin-left: 600px;
+}
+.title ul li{
+    display: inline;
+    margin-left: 40px;
+}
+.title ul li a{
+    margin-top: 150px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    *zoom:1;
+}
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.drop-content ul li {
+    float: left;
+    margin: 0 15px;
+    margin-bottom: 3px;
+    background-color: pink;
+}
+.drop-content ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+.drop-content ul li a{
+    display: block;
+    height: 42px;
+    padding:0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color:#050505;
+    margin-top: 5px;
+}
+.hover-btn:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+.drop-menu {
+    float: left;
+    margin-left: 30px;
+    margin-right: 20px;
+    
+    /* 其他的关于整体的样式控制 */
+}
+.hover-btn {
+    
+    cursor: pointer; /* hover时鼠标的变化提示 */
+    /* 其他的关于hover对象的样式控制 */
+}
+.drop-content {
+    display: none; /* 默认不显示菜单 */
+    position: absolute; /* 跟hover对象的relative对应 */
+    z-index: 1; /* 保证菜单在最上层，不被其他元素覆盖 */
+    background-color: lightblue;
+    /* 其他的关于下拉菜单的样式控制 */
+}
+
+/* 以下开始利用hover选择器实现鼠标悬停时显示下拉菜单 */
+.drop-menu:hover .drop-content {
+    display: block; /* 悬停时变为显示 */
+}
+
+.search {
+    float: right;
+    width: 166px;
+    height: 42px;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+.search input {
+    float: left;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    color:#bfbfbf;
+    padding-left: 15px;
+}
+.search button {
+    float: right;
+    width: 50px;
+    height: 42px;
+    border:0;
+    background:url(btn.png);
+}
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color:#666;
+}
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color:#666;
+}
+.banner {
+    height: 675px;
+    margin-top: 250px;
+    
+}
+.banner h1{
+    color:white;
+    text-align:center;
+    
+}
+.banner h2{
+    color:white;
+    text-align:center;
+    font-style: italic;
+}
+.banner .w{
+    height: 675px;
+    
+}
+.banner1 {
+    height: 675px;
+    background-color: white;
+}
+
+.footer {
+    height: 115px;
+}
+.footer .w {
+    padding-top: 35px;
+}
+.footer .copyright {
+    float: left;
+}
+.copyright p {
+    font-size: 12px;
+
+    margin: 20px 0 15px 0;
+}
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+}
+.footer .links {
+    float: right;
+}
+.links dl {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.links dl dt {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.links dl dt a {
+    font-size: 12px;
+
+}
+.facebook_logo {
+    float: right;
+}
+.middle_but {
+    height: 10em;
+    top: 50%;
+    left: 50%;
+}
+#videoDiv {width: 1200px; height: 600px; position: relative;}
+#video1 { margin: auto; display: block;width: 1200px;}
+#videoMessage { position: absolute; top: 0; left: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+}
+#videoMessage *{padding:0.4em; margin:0}
+#videoMessage {text-shadow: 2px 2px 2px #000000; color:white;z-index:99 }
+#videoMessage h1{font-size: 2em;color:#ffffff;text-align:center;}
+#videoMessage h2{font-size: 1.5em;color:#ffffff;text-align:center;}
+#videoMessage h3{font-size: 1.2em;color:#ffffff;text-align:center;}
+.videoClick {text-align:center}
+.videoClick a{color:white;background-color:rgba(241, 241, 241, 0.25);font-size: 1.7em;cursor:pointer;cursor:hand}
+.login {
+    display:none;
+    width:512px;
+    height:280px;
+    position:fixed;
+    border: #ebebeb solid 1px;
+    left:50%;
+    top:50%;
+    background:#ffffff;
+    box-shadow:0px 0px 20px #ddd;
+    z-index:9999;
+    transform: translate(-50%, -50%);
+
+}
+.loginnav {
+    float: right;
+    margin-top: -18px;
+}
+.login-title {
+    left:200px;
+    width: 150px;
+    margin: 10px 0px 0px 0px;
+    text-align:center;
+    line-height:40px;
+    height:40px;
+    font-size:18px;
+    position:relative;
+    cursor:move;
+}
+
+.login-input-content {
+    margin-top:20px;
+    margin-left: 100px;
+}
+.login-header a {
+    color: white;
+    font-weight: bold;
+}
+.login-button {
+    width: 50%;
+    margin: 30px auto 0px auto;
+    line-height: 40px;
+    font-size: 14px;
+    margin-left: 50px;
+    border: #ebebeb 1px solid;
+    text-align: center;
+}
+
+.login-bg {
+    display: none;
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+.login-button a {
+    display:block;
+}
+.login-input input.list-input {
+    float: left;
+    line-height:35px;
+    height:35px;
+    width:350px;
+    border: #ebebeb 1px solid;
+    text-indent:5px; 
+}
+.login-input {
+    overflow: hidden;
+    margin: 0px 0px 20px 0px;
+}
+
+.login-input label{
+    float: left; 
+    width: 90px;
+    padding-right:10px;
+    text-align:right;
+    line-height: 20px;
+    height:35px;
+    font-size:14px;
+}
+
+.login-title span {
+    position: absolute;
+    font-size: 12px;
+    right: -150px;
+    top: -30px;
+    background: #ffffff;
+    border: #ebebeb solid 1px;
+    width: 40px;
+    height:40px;
+    border-radius:20px;
+}

@@ -1,31 +1,92 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Insert Data</title>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
+    <title>CSUF Community Out Reach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="logo.png">
 </head>
+
 <body>
-    <!-- Give Servlet reference to the form as an instances 
-    GET and POST services can be according to the problem statement-->
-    <form action="./test" method="post">
-        <p>RoomID:</p> 
-        <!-- Create an element with mandatory name attribute,
-        so that data can be transfer to the servlet using getParameter() -->
-        <input type="text" name="room_id"/>
-        <br/>
-        <p>address:</p> 
-        <input type="text" name="address"/>
-        <br/><br/><br/>
-        <p>description:</p> 
-        <input type="text" name="description"/>
-        <br/><br/><br/>
-        <p>owner_id:</p> 
-        <input type="text" name="owner_id"/>
-        <br/><br/><br/>
-        <p>capcity:</p> 
-        <input type="text" name="capcity"/>
-        <br/><br/><br/>
-      	<input type= "submit"/>
-    </form>
+    <div class="header w">
+        <div class="logo">
+            <a href="index.html"><img src="assets/img/logo.png" height="60px" alt="wrong image"></a>
+            <a href="index.html" class="logoname">Sky Reservation</a>
+        </div>
+        <div class="title">
+            <ul>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="available_room.html">Available Room</a></li>
+                <li><a href="available_room.html">People</a></li>
+                <li><a href="available_room.html">Room Charge</a></li>
+            </ul>
+        </div>
+
+        <div class="loginnav">
+            <div class="login-header"><a id="link" href="javascript:;">Sign-In</a></div>
+            <form id="login" class="login" action="login.html">
+                <div id="title" class="login-title">Room Reservation
+                    <span><a id="closeBtn" href="javascript:void(0);" class="close-login">Close</a></span>
+                </div>
+                <div class="login-input-content">
+                    <div class="login-input">
+                        <label>Username：</label>
+                        <input type="text" placeholder="Username" name="info[username]" id="username" required>
+                    </div>
+                    <div class="login-input">
+                        <label>Password：</label>
+                        <input type="password" placeholder="Password" name="info[password]" id="password" required>
+                    </div>
+                    <button type="submit" id="loginBtn" class="login-button" action="login.html"
+                        id="login-button-submit">Login
+                    </button>
+                </div>
+
+
+            </form>
+            <div id="bg" class="login-bg"></div>
+        </div>
+    </div>
+
+
+    <div class="banner w">
+        <h2>Welcome to Shen & Lin's database</h2>
+        <h1>IT IS NICE TO MEETING YOU</h1>
+    </div>
+
+
+
 </body>
+<script>
+    var login = document.querySelector('.login');
+    var mask = document.querySelector('.login-bg');
+    var link = document.querySelector('#link');
+    var closeBtn = document.querySelector('#closeBtn');
+    var title = document.querySelector('#title');
+    link.addEventListener('click', function () {
+        mask.style.display = 'block';
+        login.style.display = 'block';
+    })
+    closeBtn.addEventListener('click', function () {
+        mask.style.display = 'none';
+        login.style.display = 'none';
+    })
+    title.addEventListener('mousedown', function (e) {
+        var x = e.pageX - login.offsetLeft;
+        var y = e.pageY - login.offsetTop;
+        function move(e) {
+            login.style.left = e.pageX - x + 'px';
+            login.style.top = e.pageY - y + 'px';
+        }
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', function () {
+            document.removeEventListener('mousemove', move);
+        })
+
+    })
+
+</Script>
+
 </html>
