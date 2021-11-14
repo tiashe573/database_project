@@ -32,11 +32,11 @@ body {
     display: inline-block;
 }
 .title{
-    margin-left: 600px;
+    margin-left: 400px;
 }
 .title ul li{
     display: inline;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 .title ul li a{
     margin-top: 150px;
@@ -167,6 +167,7 @@ a {
 }
 .banner1 {
     height: 675px;
+    text-align: end;
     background-color: white;
 }
 
@@ -332,4 +333,25 @@ a {
     width: 40px;
     height:40px;
     border-radius:20px;
+}
+
+.background{
+    background-color: white;
+    height:675px;
+}
+
+h1{
+   font-size: 50px;
+   text-align: center;
+}
+
+table, tr, td{
+    text-align: center;
+}
+
+th{
+    height:60px;
+    text-align: center;
+    padding: 35px;
+    background-color: rgb(172, 201,255);
 }
