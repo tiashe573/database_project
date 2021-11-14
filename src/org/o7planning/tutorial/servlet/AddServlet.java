@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.concurrent.TimeUnit;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -98,6 +101,9 @@ public class AddServlet extends HttpServlet {
 			
 
 			out.println("<html><body><b>Successfully Inserted" + "</b></body></html>");
+			TimeUnit.SECONDS.sleep(3);
+			RequestDispatcher view = request.getRequestDispatcher("index.html");
+			view.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
