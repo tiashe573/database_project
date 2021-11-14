@@ -1,55 +1,125 @@
+</html>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Available Room</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='available_room.css'>
-    <script src='available_room.js'></script>
+<html lang="en">
 
-    <Header>
-        <h1>Available Room</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
+    <title>CSUF Community Out Reach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/img/logo.png">
+</head>
+
+<body>
+    <div class="header w">
+        <div class="logo">
+            <a href="index.html"><img src="assets/img/logo.png" height="60px" alt="wrong image"></a>
+            <a href="index.html" class="logoname">Sky Reservation</a>
+        </div>
+        <div class="title">
+            <ul>
+                <li><a href="room.html">Room Information</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="available_room.html">Available Room</a></li>
+                <li><a href="available_room.html">People</a></li>
+                <li><a href="available_room.html">Room Charge</a></li>
+            </ul>
+        </div>
+
+        <div class="loginnav">
+            <div class="login-header"><a id="link" href="javascript:;">Sign-In</a></div>
+            <form id="login" class="login" action="login.html">
+                <div id="title" class="login-title">Room Reservation
+                    <span><a id="closeBtn" href="javascript:void(0);" class="close-login">Close</a></span>
+                </div>
+                <div class="login-input-content">
+                    <div class="login-input">
+                        <label>Username：</label>
+                        <input type="text" placeholder="Username" name="info[username]" id="username" required>
+                    </div>
+                    <div class="login-input">
+                        <label>Password：</label>
+                        <input type="password" placeholder="Password" name="info[password]" id="password" required>
+                    </div>
+                    <button type="submit" id="loginBtn" class="login-button" action="login.html"
+                        id="login-button-submit">Login
+                    </button>
+                </div>
+
+
+            </form>
+            <div id="bg" class="login-bg"></div>
+        </div>
+    </div>
+
+    
 </head>
 <body>
-    <table id="new_table">
-        <tr>
-          <th>Room number</th>
-          <th>Building</th>
-          <th>Floor</th>
-          <th>Available Time</th>
-          <th>Available Date</th>
-          <th>Period</th>
-          <th>Room Charge</th>
-          <th>Capacity</th>
-        </tr>
+    <div class="background">
+        <Header class="header-table">
+            <h1>Available Room</h1></Header>
+        <table id="new_table">
+            <tr>
+            <th>Room number</th>
+            <th>Building</th>
+            <th>Floor</th>
+            <th>Available Time</th>
+            <th>Available Date</th>
+            <th>Period</th>
+            <th>Room Charge</th>
+            <th>Capacity</th>
+            </tr>
 
-        <tr>
-            <td>101</td>
-            <td>Library</td>
-            <td>1st Floor</td>
-            <td>2:00pm</td>
-            <td>11/07/2021</td>
-            <td>1 hr</td>
-            <td>$20</td>
-            <td>35</td>
-            <td>    <button type="Add">Make Reservation</button></td>
-            
-        </tr>
+            <tr>
+                <td>101</td>
+                <td>Library</td>
+                <td>1st Floor</td>
+                <td>2:00pm</td>
+                <td>11/07/2021</td>
+                <td>1 hr</td>
+                <td>$20</td>
+                <td>35</td>
+                <td>    <button type="Add">Make Reservation</button></td>
+                
+            </tr>
 
-        <tr>
-            <td>102</td>
-            <td>Library</td>
-            <td>1st Floor</td>
-            <td>5:00pm</td>
-            <td>11/08/2021</td>
-            <td>2hr</td>
-            <td>$30</td>
-            <td>60</td>
-            <td>    <button type="Add">Make Reservation</button></td>
-        </tr>
-    </table> 
+            <tr>
+                <td>102</td>
+                <td>Library</td>
+                <td>1st Floor</td>
+                <td>5:00pm</td>
+                <td>11/08/2021</td>
+                <td>2hr</td>
+                <td>$30</td>
+                <td>60</td>
+                <td>    <button type="Add">Make Reservation</button></td>
+            </tr>
 
+            <tr>
+                <td>103</td>
+                <td>Library</td>
+                <td>1st Floor</td>
+                <td>5:00pm</td>
+                <td>11/08/2021</td>
+                <td>2hr</td>
+                <td>$30</td>
+                <td>60</td>
+                <td>    <button type="Add">Make Reservation</button></td>
+            </tr>
+
+            <tr>
+                <td>104</td>
+                <td>Library</td>
+                <td>1st Floor</td>
+                <td>5:00pm</td>
+                <td>11/08/2021</td>
+                <td>2hr</td>
+                <td>$30</td>
+                <td>60</td>
+                <td>    <button type="Add">Make Reservation</button></td>
+            </tr>
+        </table> 
+    </div>
     
 </body>
 </html>
