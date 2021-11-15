@@ -355,3 +355,43 @@ th{
     padding: 35px;
     background-color: rgb(172, 201,255);
 }
+
+.people-list{
+    flex: 1 1 auto;
+    order: 1;
+    list-style:none;
+    display:block;
+    justify-content:center;
+    white-space:nowrap;
+    overflow-x: auto;
+}
+
+.people-title { 
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+
+    background: white;
+    color: black;
+
+    font-size: 18px;
+}
+
+.people-item{
+    display:flex;
+    min-width: 500px;
+    max-width: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+.people-intro{
+    min-width: 500px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h2{
+    justify-content:start;
+    font-size: 50px;
+}
