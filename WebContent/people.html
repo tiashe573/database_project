@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
     <title>CSUF Community Out Reach</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="assets/img/logo.png">
 </head>
 
 <body>
@@ -50,43 +51,40 @@
         </div>
     </div>
 
+</body>   
+</head>
+<body>
+    <div class="background">
+        <Header class="header-people">
+            <h2>Contact information</h2>
+        </Header>
 
-    <div class="banner w">
-        <h2>Welcome to Shen & Lin's database</h2>
-        <h1>IT IS NICE TO MEETING YOU</h1>
+
+        <main>
+            <main class="main-people">
+                <ul class="people-list">
+                    <li class="people-item">
+                        <span class="people-title">John Smith <br>(626)123-4432</span>
+                        <span class="people-intro"><br> Library Administrator</span>
+                    </li>
+                    <li class="people-item">
+                        <span class="people-title">Anna Braney <br>(626)123-4432 </span>
+                        <span class="people-intro"><br>Computer Science Department, Administrator</span>
+                    </li>
+                    <li class="people-item">
+                        <span class="people-title">Emma Elisabeth <br>(626)123-4432</span>
+                        <span class="people-intro"><br>Business Department, Administrator</span>
+                    </li>
+                    <li class="people-item">
+                        <span class="people-title">Sofia Zhao <br>(626)123-4432</span>
+                        <span class="people-intro"><br>Math Department, Administrator</span>
+                    </li>
+                    <li class="people-item">
+                        <span class="people-title">David Anthony <br>(626)123-4432</span>
+                        <span class="people-intro"><br>Physics Department, Administator</span>
+                    </li>
+                </ul>
+        </main>
+        <button type="button-add">Add Contact</button>
     </div>
-
-
-
 </body>
-<script>
-    var login = document.querySelector('.login');
-    var mask = document.querySelector('.login-bg');
-    var link = document.querySelector('#link');
-    var closeBtn = document.querySelector('#closeBtn');
-    var title = document.querySelector('#title');
-    link.addEventListener('click', function () {
-        mask.style.display = 'block';
-        login.style.display = 'block';
-    })
-    closeBtn.addEventListener('click', function () {
-        mask.style.display = 'none';
-        login.style.display = 'none';
-    })
-    title.addEventListener('mousedown', function (e) {
-        var x = e.pageX - login.offsetLeft;
-        var y = e.pageY - login.offsetTop;
-        function move(e) {
-            login.style.left = e.pageX - x + 'px';
-            login.style.top = e.pageY - y + 'px';
-        }
-        document.addEventListener('mousemove', move);
-        document.addEventListener('mouseup', function () {
-            document.removeEventListener('mousemove', move);
-        })
-
-    })
-
-</Script>
-
-</html>
