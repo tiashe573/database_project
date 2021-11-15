@@ -23,6 +23,10 @@
        <servlet-class>org.o7planning.tutorial.servlet.ViewServlet</servlet-class>
    </servlet>
    <servlet>
+       <servlet-name>ViewByUserServlet</servlet-name>
+       <servlet-class>org.o7planning.tutorial.servlet.ViewByUserServlet</servlet-class>
+   </servlet>
+   <servlet>
        <servlet-name>DeleteServlet</servlet-name>
        <servlet-class>org.o7planning.tutorial.servlet.DeleteServlet</servlet-class>
    </servlet>
@@ -41,6 +45,10 @@
 	<servlet-mapping>
        <servlet-name>ViewServlet</servlet-name>
        <url-pattern>/view</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+       <servlet-name>ViewByUserServlet</servlet-name>
+       <url-pattern>/viewByUser</url-pattern>
    </servlet-mapping>
 	<servlet-mapping>
        <servlet-name>DeleteServlet</servlet-name>

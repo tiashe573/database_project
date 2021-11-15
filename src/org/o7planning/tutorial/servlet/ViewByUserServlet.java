@@ -16,14 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.cj.xdevapi.Statement;
 
-@WebServlet("/ViewServlet")
-public class ViewServlet extends HttpServlet {
+@WebServlet("/ViewByUserServlet")
+public class ViewByUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ViewServlet() {
+	public ViewByUserServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,10 +34,10 @@ public class ViewServlet extends HttpServlet {
 		ServletOutputStream out = response.getOutputStream();
 
 		out.println("<html>");
-		out.println("<head><title>view Servlet</title></head>");
+		out.println("<head><title>view by user Servlet</title></head>");
 
 		out.println("<body>");
-		out.println("This is myview Servlet");
+		out.println("This is my view by user Servlet");
 		out.println("</body>");
 		out.println("<html>");
 	}
@@ -68,10 +68,10 @@ public class ViewServlet extends HttpServlet {
 	                                                     dbUsername, 
 	                                                     dbPassword);
 	        PrintWriter out = response.getWriter();
-	        out.print("Search result for room id:" + request.getParameter("room_idV")+ " ");
-			PreparedStatement st = con.prepareStatement("select * from Reservation where room_id = ?");
+	        out.print("search result for user id: " + request.getParameter("user")  + ". ");
+			PreparedStatement st = con.prepareStatement("select * from Reservation where Guest_Name = ?");
 
-			st.setInt(1, Integer.valueOf(request.getParameter("room_idV")));
+			st.setString(1, request.getParameter("user"));
 			
 			ResultSet rs = st.executeQuery();
 			
@@ -110,6 +110,7 @@ public class ViewServlet extends HttpServlet {
 			// Close all the connections
 			st.close();
 			con.close();
+			
 
 			// Get a writer pointer
 			// to display the successful result

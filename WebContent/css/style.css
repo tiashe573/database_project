@@ -167,7 +167,6 @@ a {
 }
 .banner1 {
     height: 675px;
-    text-align: end;
     background-color: white;
 }
 
@@ -395,3 +394,12 @@ h2{
     justify-content:start;
     font-size: 50px;
 }
+.datainput {
+    padding: 12px 10px;
+    
+  box-sizing: border-box;
+}
+.datainput input {
+    border: 2px solid gray;
+    width: 9.3%;
+  }
