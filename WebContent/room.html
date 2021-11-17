@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
@@ -50,48 +51,72 @@
         </div>
     </div>
 
-        <main class="main-content">
-            <ul class="room-list">
-                <li class="room-item">
-                    <a href="assets/img/room_image/1.jpg" data-image-role="trigger" data-image-title="A101" data-image-url="assets/img/room_image/1.jpg">
-                        <img class="room-image" src="assets/img/room_image/1.jpg" alt="">
-                        <span class="room-title">A101</span>
-                    </a>
-                    
-                </li>
-                <li class="room-item">
-                    <a href="assets/img/room_image/2.jpg"
-                    data-image-role="trigger" data-image-title="A102" data-image-url="assets/img/room_image/2.jpg">
-                        <img class="room-image" src="assets/img/room_image/2.jpg" alt="">
-                        <span class="room-title">A102</span>
-                    </a>
-                </li>
-                <li class="room-item">
-                    <a href="assets/img/room_image/3.jpg"
-                    data-image-role="trigger" data-image-title="A103" data-image-url="assets/img/room_image/3.jpg">
-                        <img class="room-image" src="assets/img/room_image/3.jpg" alt="">
-                        <span class="room-title">A103</span>
-                    </a>
-                </li>
-                <li class="room-item">
-                    <a href="assets/img/room_image/4.jpg"
-                    data-image-role="trigger" data-image-title="A104" data-image-url="assets/img/room_image/4.jpg">
-                        <img class="room-image" src="assets/img/room_image/4.jpg" alt="">
-                        <span class="room-title">A104</span>
-                    </a>
-                </li>
-            </ul>
+    <main class="main-content">
+        <ul class="room-list">
+            <li class="room-item">
+                <a href="assets/img/room_image/1.jpg" data-image-role="trigger" data-image-title="A101"
+                    data-image-url="assets/img/room_image/1.jpg">
+                    <img class="room-image" src="assets/img/room_image/1.jpg" alt="">
+                    <span class="room-title">A101</span>
+                </a>
 
-            <div class="display-image-box">
-                <div class="diaplay-image-frame">
-                    <img class="display-image" data-image-role="target" src="assets/img/room_image/1.jpg" alt="">
-                    <span class="display-image-title" data-image-role="title">A101</span>
-                </div>
+            </li>
+            <li>
+                <form action="./view" method="get">
+                    <button name="room_id" value="101">view detail for 101</button>
+                </form>
+            </li>
+            <li class="room-item">
+                <a href="assets/img/room_image/2.jpg" data-image-role="trigger" data-image-title="A102"
+                    data-image-url="assets/img/room_image/2.jpg">
+                    <img class="room-image" src="assets/img/room_image/2.jpg" alt="">
+                    <span class="room-title">A102</span>
+                </a>
+
+            </li>
+            <li>
+                <form action="./view" method="get">
+                    <button name="room_id" value="102">view detail for 102</button>
+                </form>
+            </li>
+            <li class="room-item">
+                <a href="assets/img/room_image/3.jpg" data-image-role="trigger" data-image-title="A103"
+                    data-image-url="assets/img/room_image/3.jpg">
+                    <img class="room-image" src="assets/img/room_image/3.jpg" alt="">
+                    <span class="room-title">A103</span>
+                </a>
+
+            </li>
+            <li>
+                <form action="./view" method="get">
+                    <button name="room_id" value="103">view detail for 103</button>
+                </form>
+            </li>
+            <li class="room-item">
+                <a href="assets/img/room_image/4.jpg" data-image-role="trigger" data-image-title="A104"
+                    data-image-url="assets/img/room_image/4.jpg">
+                    <img class="room-image" src="assets/img/room_image/4.jpg" alt="">
+                    <span class="room-title">A104</span>
+                </a>
+
+            </li>
+            <li>
+                <form action="./view" method="get">
+                    <button name="room_id" value="104">view detail for 104</button>
+                </form>
+            </li>
+        </ul>
+
+        <div class="display-image-box">
+            <div class="diaplay-image-frame">
+                <img class="display-image" data-image-role="target" src="assets/img/room_image/1.jpg" alt="">
+                <span class="display-image-title" data-image-role="title">A101</span>
             </div>
-        </main>
-        <script src="js/room.js" charset="utf-8"></script>
+        </div>
+    </main>
+    <script src="js/room.js" charset="utf-8"></script>
 
-        
+
 </body>
 <script>
     var login = document.querySelector('.login');
@@ -122,4 +147,5 @@
     })
 
 </Script>
+
 </html>

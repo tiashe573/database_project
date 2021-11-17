@@ -31,15 +31,81 @@ public class ViewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ServletOutputStream out = response.getOutputStream();
+		try {
 
-		out.println("<html>");
-		out.println("<head><title>view Servlet</title></head>");
+			String dbDriver = "com.mysql.cj.jdbc.Driver";
+	        String dbURL = "jdbc:mysql:// localhost:3306/";
+	        // Database name to access
+	        String dbName = "mytestsql";
+	        String dbUsername = "root";
+	        String dbPassword = "123456";
+	  
+	        Class.forName(dbDriver);
+	        Connection con = DriverManager.getConnection(dbURL + dbName,
+	                                                     dbUsername, 
+	                                                     dbPassword);
+	        PrintWriter out = response.getWriter();
+	        out.print("Search result for room id:" + request.getParameter("room_id")+ " ");
+			PreparedStatement st = con.prepareStatement("select * from room where room_id = ?");
 
-		out.println("<body>");
-		out.println("This is myview Servlet");
-		out.println("</body>");
-		out.println("<html>");
+			st.setInt(1, Integer.valueOf(request.getParameter("room_id")));
+			
+			ResultSet rs = st.executeQuery();
+			
+			String location = "";
+		      
+		      // iterate through the java resultset
+		      while (rs.next())
+		      {
+		        int id = rs.getInt("room_id");
+		        String address = rs.getString("address");
+		        location = address;
+		        String description = rs.getString("description");
+		        int ownerid = rs.getInt("owner_id");
+			       
+		        int capcity = rs.getInt("capcity");
+			      
+		        
+		        // print the results
+		        out.print("Room id is " + id);
+		        out.print(". address is " + address);
+		        out.print(". Room description is " + description);
+		        out.print(". Owner id is " + ownerid);
+		        out.print(". Room capcity is " + capcity);
+		      }
+
+			// Execute the insert command using executeUpdate()
+			// to make changes in database
+		      
+		      	st = con.prepareStatement("select * from Address where address = ?");
+
+				st.setString(1, location);
+				
+				 while (rs.next())
+			      {
+			        int floor = rs.getInt("floor");
+			        int height = rs.getInt("height");
+				       
+			        int gis = rs.getInt("gis_coordinate");
+				    int size = rs.getInt("size");
+			        
+			        // print the results
+			        out.print(". Floor is " + floor);
+			        out.print(". Height is " + height + " feet. ");
+			        out.print(". Gis Coordinate is " + gis);
+			        out.print(". Room size is " + size + " square feet.");
+			      }
+			// Close all the connections
+			st.close();
+			con.close();
+
+			// Get a writer pointer
+			// to display the successful result
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
