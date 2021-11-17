@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Room Information</title>
+
+</head>
+
+<script>
+function yesFunction(){
+    
+    var list1 = document.getElementById("newBox1");
+    window.close();
+}
+
+function noFunction(){
+    window.close();
+}
+</script>
+
+<body>
+    <div>Are you sure to do this?</div>
+
+    <div>
+        <input type="button" value="Yes" onclick="yesFunction();"/>
+        <input type="button" value="No" onclick="noFunction();"/>
+    </div>
+</body>
+
