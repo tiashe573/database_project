@@ -24,10 +24,9 @@ function createData(){
     txtBox8.innerHTML = document.getElementById("capacity").value;
 
     var button9 = document.createElement('div');
-    button9.innerHTML = " <button type='Delete'>Make Reservation</button>";
+    button9.innerHTML = " <input type='button' value='Make Reservation'>";
 
     var button10 = document.createElement('div');
-    var a = "pop.html";
     button10.innerHTML = "<input type='button' value='Delete' onclick='poptastic(\"pop.html\");'/>"
 
     document.getElementById("newBox1").appendChild(txtBox1);
