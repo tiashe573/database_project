@@ -8,6 +8,19 @@
     <title>CSUF Community Out Reach</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/img/logo.png">
+
+    <script src= "js/available_room.js" charset="utf-8"></script>
+
+    <script>
+        var newwindow;
+        function poptastic(url)
+        {
+            newwindow=window.open(url,'name','height=100,width=200');
+            if (window.focus) {newwindow.focus()}
+        }
+    </script>
+
+
 </head>
 
 <body>
@@ -52,75 +65,126 @@
     </div>
 
     
-</head>
+</body>
 <body>
     <div class="background">
         <Header class="header-table">
             <h1>Available Room</h1></Header>
-        <table id="new_table">
-            <tr>
-            <th>Room number</th>
-            <th>Building</th>
-            <th>Floor</th>
-            <th>Available Time</th>
-            <th>Available Date</th>
-            <th>Period</th>
-            <th>Room Charge</th>
-            <th>Capacity</th>
-            </tr>
 
-            <tr>
-                <td>101</td>
-                <td>Library</td>
-                <td>1st Floor</td>
-                <td>2:00pm</td>
-                <td>11/07/2021</td>
-                <td>1 hr</td>
-                <td>$20</td>
-                <td>35</td>
-                <td>    <button type="Add">Make Reservation</button></td>
-                
-            </tr>
+        <main class="main-page">
+            <table id="new_table">
+                <tr>
+                <th>Room number</th>
+                <th>Building</th>
+                <th>Floor</th>
+                <th>Available Time</th>
+                <th>Available Date</th>
+                <th>Period</th>
+                <th>Room Charge</th>
+                <th>Capacity</th>
+                <th>Function</th>
+                <th>Function2</th>
+                </td>
+                </tr>
 
-            <tr>
-                <td>102</td>
-                <td>Library</td>
-                <td>1st Floor</td>
-                <td>5:00pm</td>
-                <td>11/08/2021</td>
-                <td>2hr</td>
-                <td>$30</td>
-                <td>60</td>
-                <td>    <button type="Add">Make Reservation</button></td>
-            </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Library</td>
+                    <td>1st Floor</td>
+                    <td>2:00pm</td>
+                    <td>11/07/2021</td>
+                    <td>1 hr</td>
+                    <td>$20</td>
+                    <td>35</td>
+                    <td>    <input type="button" value="Make Reservation"></td>
+                        <td>    <input type="button" value="Delete" onclick="poptastic('pop.html');"/></td>
+                       
+                    
+                </tr>
 
-            <tr>
-                <td>103</td>
-                <td>Library</td>
-                <td>1st Floor</td>
-                <td>5:00pm</td>
-                <td>11/08/2021</td>
-                <td>2hr</td>
-                <td>$30</td>
-                <td>60</td>
-                <td>    <button type="Add">Make Reservation</button></td>
-            </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Library</td>
+                    <td>1st Floor</td>
+                    <td>5:00pm</td>
+                    <td>11/08/2021</td>
+                    <td>2hr</td>
+                    <td>$30</td>
+                    <td>60</td>
+                    <td>    <input type="button" value="Make Reservation"></td>
+                        <td>    <input type="button" value="Delete" onclick="poptastic('pop.html');"/></td>
+                </tr>
 
-            <tr>
-                <td>104</td>
-                <td>Library</td>
-                <td>1st Floor</td>
-                <td>5:00pm</td>
-                <td>11/08/2021</td>
-                <td>2hr</td>
-                <td>$30</td>
-                <td>60</td>
-                <td>    <button type="Add">Make Reservation</button></td>
-            </tr>
-        </table> 
+                <tr>
+                    <td>103</td>
+                    <td>Library</td>
+                    <td>1st Floor</td>
+                    <td>5:00pm</td>
+                    <td>11/08/2021</td>
+                    <td>2hr</td>
+                    <td>$30</td>
+                    <td>60</td>
+                    <td>    <input type="button" value="Make Reservation"></td>
+                        <td>    <input type="button" value="Delete" onclick="poptastic('pop.html');"/></td>
+                </tr>
+
+                <tr>
+                    <td>104</td>
+                    <td>Library</td>
+                    <td>1st Floor</td>
+                    <td>5:00pm</td>
+                    <td>11/08/2021</td>
+                    <td>2hr</td>
+                    <td>$30</td>
+                    <td>60</td>
+                    <td>    <input type="button" value="Make Reservation"></td>
+                        <td>    <input type="button" value="Delete" onclick="poptastic('pop.html');"/></td>
+                </tr>
+
+                <tr>
+
+                    <td><div id="newBox1"></div></td>
+                    <td><div id="newBox2"></div></td>
+                    <td><div id="newBox3"></div></td>
+                    <td><div id="newBox4"></div></td>
+                    <td><div id="newBox5"></div></td>
+                    <td><div id="newBox6"></div></td>
+                    <td><div id="newBox7"></div></td>
+                    <td><div id="newBox8"></div></td>
+                    <td><a id="newBox9"></a> </td>
+                    <td><a id="newBox10"></a></td>
+                </tr>
+            </table> 
+
+
+            <div id="available-input">
+                    <h4>Adding availables</h4>
+
+                    <div>Room Number</div>
+                    <div><input type="text" id="room_num"></div>
+                    <div>Building</div>
+                    <div><input type="text" id="building"></div>
+                    <div>Floor</div>
+                    <div><input type="text" id="floor" ></div>
+                    <div>Available Time</div>
+                    <div><input type="text" id="avatime"></div>
+                    <div>Available Date</div>
+                    <div><input type="text" id="avadate"></div>
+                    <div>Period</div>
+                    <div><input type="text" id="period"></div>
+                    <div>Room Charge</div>
+                    <div><input type="text" id="roomcharge"></div>
+                    <div>Capacity</div>
+                    <div><input type="text" id="capacity"></div>
+
+                    <input type="button" value="Add this available" onclick="createData();"/>
+                    
+        </main>
     </div>
     
 </body>
+
+
 <script>
     var login = document.querySelector('.login');
     var mask = document.querySelector('.login-bg');
@@ -149,5 +213,9 @@
 
     })
 
-</Script>
+</script>
+
+
+
+
 </html>

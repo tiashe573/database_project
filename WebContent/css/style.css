@@ -341,17 +341,17 @@ a {
 
 h1{
    font-size: 50px;
-   text-align: center;
+   text-align: left;
 }
 
 table, tr, td{
-    text-align: center;
+    text-align: left;
 }
 
 th{
-    height:60px;
-    text-align: center;
-    padding: 35px;
+    height:50px;
+    text-align: left;
+    padding: 20px;
     background-color: rgb(172, 201,255);
 }
 
@@ -403,3 +403,20 @@ h2{
     border: 2px solid gray;
     width: 9.3%;
   }
+
+.main-page{
+    display:flex;
+
+}
+
+.h4{
+    font-size: 100px;
+}
+
+.reservation-main{
+    display:flex;
+    flex:1 1 auto;
+    order:1;
+}
+
+
