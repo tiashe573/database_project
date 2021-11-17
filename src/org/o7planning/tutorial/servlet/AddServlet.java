@@ -101,9 +101,6 @@ public class AddServlet extends HttpServlet {
 			
 
 			out.println("<html><body><b>Successfully Inserted" + "</b></body></html>");
-			TimeUnit.SECONDS.sleep(3);
-			RequestDispatcher view = request.getRequestDispatcher("index.html");
-			view.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
