@@ -31,15 +31,85 @@ public class ViewByUserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ServletOutputStream out = response.getOutputStream();
+		try {
 
-		out.println("<html>");
-		out.println("<head><title>view by user Servlet</title></head>");
+			String dbDriver = "com.mysql.cj.jdbc.Driver";
+	        String dbURL = "jdbc:mysql:// localhost:3306/";
+	        // Database name to access
+	        String dbName = "mytestsql";
+	        String dbUsername = "root";
+	        String dbPassword = "123456";
+	  
+	        Class.forName(dbDriver);
+	        Connection con = DriverManager.getConnection(dbURL + dbName,
+	                                                     dbUsername, 
+	                                                     dbPassword);
+	        PrintWriter out = response.getWriter();
+	        out.print("search result for user id: " + request.getParameter("user")  + ". ");
+			PreparedStatement st = con.prepareStatement("select * from people where account_number = ?");
 
-		out.println("<body>");
-		out.println("This is my view by user Servlet");
-		out.println("</body>");
-		out.println("<html>");
+			st.setString(1, request.getParameter("user"));
+			
+			ResultSet rs = st.executeQuery();
+			
+		      String useremail = "";
+		      // iterate through the java resultset
+		      while (rs.next())
+		      {
+		        int id = rs.getInt("e_id");
+		        String Lname = rs.getString("last_name");
+		        String Fname = rs.getString("first_name");
+		        String email = rs.getString("email");
+		        useremail =  rs.getString("email");
+		      
+		        int anumber = rs.getInt("account_number");
+			       
+		        
+		        // print the results
+		        out.print("id is " + id);
+		        out.print(". Last name is " + Lname);
+		        out.print(". First name is " + Fname);
+		        out.print(". Email is " + email);
+		        out.print(". account number is" + anumber);
+		      }
+		      
+		      	st = con.prepareStatement("select * from proxy where email = ?");
+
+				st.setString(1, useremail);
+				
+				rs = st.executeQuery();
+				
+			      
+			      // iterate through the java resultset
+			      while (rs.next())
+			      {
+			        
+				    String password = rs.getString("password");
+			        int number = rs.getInt("level");
+				       
+			        
+			        // print the results
+			        out.print(". user level is " + number);
+			        out.print(". user password is " + password + ".");
+			      }
+
+			// Execute the insert command using executeUpdate()
+			// to make changes in database
+
+			// Close all the connections
+			st.close();
+			con.close();
+			
+
+			// Get a writer pointer
+			// to display the successful result
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
 	}
 
 	/**
@@ -69,11 +139,31 @@ public class ViewByUserServlet extends HttpServlet {
 	                                                     dbPassword);
 	        PrintWriter out = response.getWriter();
 	        out.print("search result for user id: " + request.getParameter("user")  + ". ");
-			PreparedStatement st = con.prepareStatement("select * from Reservation where Guest_Name = ?");
+	        PreparedStatement st = con.prepareStatement("select * from people where account_number = ?");
 
 			st.setString(1, request.getParameter("user"));
 			
 			ResultSet rs = st.executeQuery();
+			
+		      String name = "";
+		      // iterate through the java resultset
+		      while (rs.next())
+		      {
+		        int id = rs.getInt("e_id");
+		        String Lname = rs.getString("last_name");
+		        String Fname = rs.getString("first_name");
+		        name = Fname + ' ' + Lname;
+		      
+		        int anumber = rs.getInt("account_number");
+			       
+		        
+		        // print the results
+		      }
+	        
+			st = con.prepareStatement("select * from Reservation where Guest_name = ?");
+
+			st.setString(1, name);
+			rs = st.executeQuery();
 			
 		      
 		      // iterate through the java resultset
@@ -90,18 +180,17 @@ public class ViewByUserServlet extends HttpServlet {
 			       
 		        String Room_Charge = rs.getString("Room_Charge");
 			       
-		        String Guest_Name = rs.getString("Guest_Name");
 			       
 		        
 		        // print the results
 		        out.print("id is " + id);
 		        out.print(". Building is " + Building);
-		        out.print(". Floor is" + Floor);
+		        out.print(". Floor is " + Floor);
 		        out.print(". Date is " + Date);
 		        out.print(". Time is" + Time);
 		        out.print(". Period is " + Period);
 		        out.print(". Room charge is " + Room_Charge);
-		        out.print(". Guest name is " + Guest_Name);
+		        out.print(". Guest name is " + name);
 		      }
 
 			// Execute the insert command using executeUpdate()

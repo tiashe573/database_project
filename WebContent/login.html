@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="bANJtuwJ2vuyo-REDMTnAlAO7gCTKCywggMClQoU2S0" />
-    <title>CSUF Community Out Reach</title>
+    <title>User Page</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="assets/img/logo.png">
 </head>
 
 <body>
@@ -35,9 +35,13 @@
         <h1 id="userinfo">
             hello
         </h1>
-        <form class="datainput" action="./viewByUser" method="post">
+        <form action="./viewByUser" method="post">
             <input type="text" name="user" id="mybtn" placeholder="username" />
-            <input type="submit" / value="view by user">
+            <input type="submit" / value="view by acccount number">
+        </form>
+        <form action="./viewByUser" method="get">
+            <input type="text" name="user" id="mybtn2" placeholder="username" />
+            <input type="submit" / value="view user info by account number">
         </form>
     </div>
 
@@ -70,7 +74,8 @@
     var btn = document.getElementById('mybtn');
     btn.value = res;
     div.innerHTML = "Hello " + res;
-
+    var btn2 = document.getElementById('mybtn2');
+    btn2.value = res;
 </Script>
 
 </html>
